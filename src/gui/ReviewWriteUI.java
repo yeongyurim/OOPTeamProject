@@ -9,7 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 
 public class ReviewWriteUI extends JFrame {
-
+	
     // 호출부에서 주입 (다른 UI에서 선택된 식당/메뉴/로그인 사용자)
     private final String cafeteriaName;
     private final String menuName;
