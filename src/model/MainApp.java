@@ -21,17 +21,11 @@ public class MainApp {
 	
 	public void run() {
 		
-		userManager.readAll("users.txt", new Factory<User>() {
-			public User create() {
-				return new User();
-			}
-		});
+		userManager.readAll("users.txt",User::new);
 		userManager.printAll();
-		reviewMgr.readReviews("reviews.txt");
+		reviewMgr.readAll("reviews.txt",Review::new);
 		reviewMgr.displayReviews();
-		cafeteriaManager.readAll("cafeterias.txt", new Factory<Cafeteria>() {
-			public Cafeteria create() { return new Cafeteria(); }
-		});
+		cafeteriaManager.readAll("cafeterias.txt",Cafeteria::new);
 		cafeteriaManager.printAll();
 	}
 	

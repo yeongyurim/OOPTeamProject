@@ -98,3 +98,5 @@ user096	pass096	Eclipse IDE	user	1
 user097	pass097	Net Beans	user	0
 user098	pass098	Sublime Text	user	0
 user099	pass099	Hello Java	user	0
+
+yeo	1234	연규림	user	0

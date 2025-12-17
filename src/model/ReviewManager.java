@@ -9,6 +9,7 @@ import java.util.Scanner;
 import java.util.Comparator;
 import java.util.List;
 
+import mgr.Factory;
 import mgr.Manager;
 import facade.DataEngineImpl;
 
@@ -20,7 +21,6 @@ public class ReviewManager extends DataEngineImpl<Review> {
 
     private ReviewManager() {
         setLabels(headers);
-        readReviews("reviews.txt");
     }
 
     public static ReviewManager getInstance() {
@@ -52,17 +52,7 @@ public class ReviewManager extends DataEngineImpl<Review> {
         //mList에 추가하고 파일 저장
         writeReview(newReview);
     }
-
-    public void readReviews(String fileName) {
-        // 이 코드가 없으면 읽을 때마다 기존 데이터 뒤에 똑같은 게 계속 쌓입니다.
-        if (mList != null) {
-            mList.clear();
-        }
-        // 그 다음 파일을 읽어옴
-        readAll(fileName, () -> new Review());
-    }
-
-
+    
     public void saveReviews(String fileName) {
         try (PrintWriter pw = new PrintWriter(fileName)) {
             // 부모 클래스의 mList를 사용합니다.

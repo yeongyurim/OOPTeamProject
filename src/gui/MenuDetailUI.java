@@ -161,7 +161,7 @@ public class MenuDetailUI extends JFrame {
     	reviewListPanel.removeAll();
     	
     	// 2. 데이터 다시 읽기
-    	rm.readReviews("reviews.txt");
+    	rm.readAll("reviews.txt", Review::new);
         ArrayList<Review> reviewList = rm.findReviewsByMenu(cafeteriaName, menuName);
         
         int viewW = 780;
